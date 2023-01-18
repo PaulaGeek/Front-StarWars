@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 export const Navbar = () => {
 	return (
 		<div>
-		<nav className="navbar navbar-light bg-light mb-3">
+		<nav className="navbar navbar-light bg-light mb-3 ">
 			<Link to="/">
-				<span className="navbar-brand mb-0 h1 mx-5"><img src="https://w7.pngwing.com/pngs/4/136/png-transparent-star-wars-anakin-skywalker-logo-star-wars-text-number-desktop-wallpaper.png"  width="55"
+				<span className="navbar-brand mb-0 h1 mx-5"><img src="https://www.citypng.com/public/uploads/preview/-51608494060e1tvtjfsry.png"  width="55"
                                   height="45" alt="" /></span>
 			</Link>
 

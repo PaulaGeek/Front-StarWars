@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 <div className="card-group row">
 
 <div className="card" style={{width: "18rem"}}>
-  <img src="https://www.hub-4.co.uk/wp-content/uploads/2017/11/400X200.gif" className="card-img-top " alt="..."/>
+  <img src={"https://starwars-visualguide.com/assets/img/characters/"+props.id+".jpg" }className="card-img-top " alt="..."/>
   <div className="pt-2">
     <h5 className="mt-2 ms-2"> {props.nombre} </h5>
     <p className="card-text ms-2"> Gender: {props.genero}</p>
