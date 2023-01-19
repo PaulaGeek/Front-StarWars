@@ -2,6 +2,21 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
+
+  function eliminarDatos(eliminarli) {
+    const nuevasTareas = save.filter(function (item, index) {
+      return index !== eliminarli;
+    });
+    setSave(nuevasTareas);
+  }
+
+  // function eliminarDatos(eliminarli) {
+  //   const nuevasTareas = save.filter(function (item, index) {
+  //     return index !== eliminarli;
+  //   });
+  //   setSave(nuevasTareas);
+
+
 	return (
 		<div>
 		<nav className="navbar navbar-light bg-light mb-3 ">
@@ -12,27 +27,26 @@ export const Navbar = () => {
 
 
           {/* <!-- Dropdown --> */}
-          <div className="dropdown">
-            <a className="nav-link dropdown-toggle text-dark me-4" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-
-              <h5> Favorites </h5>
-             
-            </a>
-            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a className="dropdown-item" href="#">Profile</a>
-              <a className="dropdown-item" href="#">Accesibility</a>
-              <a className="dropdown-item" href="#">Privacy and Data</a>
-              <div className="dropdown-divider"></div>
-              <a className="dropdown-item text-danger" href="#">Log out</a>
-            </div>
+          <div className="dropdown mx-5">
+            <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+                <i className="fa-solid fa-gear"></i>
+            </button>
+            <ul className="dropdown-menu" style={{right: "0",
+            left: "auto"}}>
+              <li><a className="dropdown-item" href="#">aaa </a></li>
+              <li><a className="dropdown-item" href="#">aaa </a></li>
+              <li><a className="dropdown-item" href="#">aaa </a></li>
+              <hr style={{color: "gray"}}/>
+            </ul>
           </div>
 
 
 
-          {/* <!-- Modal --> */}
-          <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
+{/* ------------------ */}
+
+
+          <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div className="modal-dialog" role="document">
               <div className="modal-content">
                 <div className="modal-header">
@@ -59,6 +73,7 @@ export const Navbar = () => {
               </div>
             </div>
           </div>
+          
 		</nav>
 		</div>
 	);

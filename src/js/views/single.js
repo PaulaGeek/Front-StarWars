@@ -6,53 +6,42 @@ import { Cards } from "../component/cards";
 
 export const Single = props => {
 	const { store, actions } = useContext(Context);
-	const [detallePersonaje, setDetallePersonaje]=useState({})
 	const params = useParams();
-	// const [generoPersonaje, setGeneroPersonaje]=useState({})
 
-
-    function obtenerInfoDeCadaPersonajes(){  
-		fetch("https://swapi.dev/api/people/"+params.theid) 
-	   .then(res => res.json())
-	   .then(data => setDetallePersonaje(data))
-	   .catch(err => console.error(err))
-	} 
-	
 
 useEffect(() => {
-
-obtenerInfoDeCadaPersonajes();
-}, [])
+	actions.obtenerInfoUnPersonaje(params.theid)
+	}, [])
 
 	return (
 <div>
-		<div>
+		<div >
 		<div className="jumbotron">
 			 <hr className="my-4" />
-			 <Cards nombre={detallePersonaje.name} />
+			 <Cards nombre={store.unpersonaje.name} />
 		 </div>
 		</div> 
 
-<div className="card d-flex justify-content-center mx-5"> 
+<div className="card d-flex justify-content-center mx-5" > 
 		<hr className="text-danger mt-5"/>
 
-<div className="d-flex container text-danger mx-2 ">
+     <div className="d-flex container text-dark mx-2 my-1 ">
 	  <h6 className="col-3">Name</h6>
 	  <h6 className="col-3">Birth Year</h6>
 	  <h6 className="col-3">Gender</h6>
 	  <h6 className="col-3">Height</h6>
 	  <h6 className="col-3">Skin Color</h6>
 	  <h6 className="col-3">Eye color</h6>
-	</div>
+	 </div>
 
-	<div className="d-flex container text-dark mx-2 my-1">
-	  <span className="col-3"> {detallePersonaje.name} </span>
-	  <span className="col-3">{detallePersonaje.birth_year}</span>
-	  <span className="col-3"> {detallePersonaje.gender} </span>
-	  <span className="col-3"> {detallePersonaje.height} </span>
-	  <span className="col-3">{detallePersonaje.skin_color}</span>
-	  <span className="col-3"> {detallePersonaje.eye_color} </span>
-	</div>
+	  <div className="d-flex container text-dark mx-2 my-1 ">
+	  <span className="col-3"> {store.unpersonaje.name} </span>
+	  <span className="col-3"> {store.unpersonaje.birth_year} </span>
+	  <span className="col-3"> {store.unpersonaje.gender} </span>
+	  <span className="col-3"> {store.unpersonaje.height} </span>
+	  <span className="col-3"> {store.unpersonaje.skin_color} </span>
+	  <span className="col-3"> {store.unpersonaje.eye_color} </span>
+	  </div> 
 	</div>
 
         </div>

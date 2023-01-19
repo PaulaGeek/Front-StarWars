@@ -3,23 +3,18 @@ import "../../styles/home.css";
 import { Personajes } from "../component/personajes";
 import { Planets } from "../component/planets";
 import { Vehiculos } from "../component/vehiculos";
+// import { Vehiculos } from "../component/vehiculos";
 import { Context } from "../store/appContext";
 
 
 export const Home = () => {
-  const [personajes, setPersonajes] = useState([]);
+  // const [personajes, setPersonajes] = useState([]);
   const [Cards, setCards] = useState([]);
   const {store}=useContext(Context)
-  console.log(store.personajes)
-  const [planets, setPlanets] = useState([]);
-//   const [vehiculos, setVehiculos] = useState([]);
+  // const [planets, setPlanets] = useState([]);
 
-  // function obtenerInfoPersonajes() {
-  //   fetch("https://swapi.dev/api/people/")
-  //     .then((res) => res.json())
-  //     .then((data) => setPersonajes(data.results))
-  //     .catch((err) => console.error(err));
-  // }
+
+
 
   function obtenerInfoCards() {
     fetch("https://swapi.dev/api/people/")
@@ -27,19 +22,19 @@ export const Home = () => {
       .then((data) => setCards(data.results))
       .catch((err) => console.error(err));
   }
-  function obtenerInfoPlanets() {
-    fetch("https://swapi.dev/api/planets/")
-      .then((res) => res.json())
-      .then((data) => setPlanets(data.results))
-      .catch((err) => console.error(err));
-  }
+  // function obtenerInfoPlanets() {
+  //   fetch("https://swapi.dev/api/planets/")
+  //     .then((res) => res.json())
+  //     .then((data) => setPlanets(data.results))
+  //     .catch((err) => console.error(err));
+  // }
 
-//   function obtenerInfoVehiculos() {
-//     fetch("https://swapi.dev/api/vehicles/")
-//       .then((res) => res.json())
-//       .then((data) => setVehiculos(data.results))
-//       .catch((err) => console.error(err));
-//   }
+  // function obtenerInfoVehiculos() {
+  //   fetch("https://swapi.dev/api/vehicles/")
+  //     .then((res) => res.json())
+  //     .then((data) => setVehiculos(data.results))
+  //     .catch((err) => console.error(err));
+  // }
 
   useEffect(() => {
     // obtenerInfoPersonajes();
@@ -48,12 +43,10 @@ export const Home = () => {
     // obtenerInfoVehiculos();
   }, []);
 
-  console.log(personajes);
-
   return (
-    <div>
+    <div >
       <div className="d-flex justify content center mx-5">
-        <h1 className="text-danger"> Characters </h1>
+        <h1 className="text-dark"> Characters </h1>
       </div>
       <div className="d-flex justify content center mx-5 my-2 overflow-auto">
         
@@ -62,22 +55,22 @@ export const Home = () => {
         ))}
       </div>
       <div className="d-flex justify content center mx-5 my-3">
-        <h1 className="text-danger"> Planetas </h1>
+        <h1 className="text-dark"> Planetas </h1>
       </div>
       <div className="d-flex justify content center mx-5 my-2 overflow-auto">
         
-        {planets.map((item, index) => (
-          <Planets nombreplanet={item.name} id={index+1}/>
+        {store.planets.map((item, index) => (
+          <Planets nombrep={item.name} population={item.population} terrain={item.terrain} id={index+1} key={index}/>
         ))}
-      {/* </div>
+      </div>
       <div className="d-flex justify content center mx-5 my-3">
-        <h1 className="text-danger"> Vehiculos </h1>
+        <h1 className="text-dark"> Vehiculos </h1>
       </div>
       <div className="d-flex justify content center mx-5 my-2 overflow-auto">
         
-        {vehiculos.map((item, index) => (
-          <Vehiculos nombrevehiculo={item.name} id={index+1} />
-        ))} */}
+        {store.vehiculos.map((item, index) => (
+          <Vehiculos nombre={item.name} id={index+23} key={index} />
+        ))}
       </div>
     </div>
   );

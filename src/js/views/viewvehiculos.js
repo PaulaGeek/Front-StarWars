@@ -1,34 +1,54 @@
-// import React, { useState, useEffect, useContext } from "react";
-// import { Link } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
+import PropTypes from "prop-types";
+import { Link, useParams } from "react-router-dom";
+import { Context } from "../store/appContext";
+import { Cards } from "../component/cards";
 
-// import { Context } from "../store/appContext";
+export const ViewVehiculos = props => {
+	const { store, actions } = useContext(Context);
+	const params = useParams();
 
 
+useEffect(() => {
+actions.obtenerInfoUnVehiculo(params.theid)
+}, [])
 
-// export const Vehiculos = () => {
-//   const { store, actions } = useContext(Context);
+	return (
+<div>
+		<div>
+		<div className="jumbotron">
+			 <hr className="my-4" />
+			 <Cards nombre={store.unvehiculo.name} />
+		 </div>
+		</div> 
 
-//   return (
-//     <div className="container">
-//       <div className="card mb-3"  >
-//         <div className="row g-0">
-//           <div className="col-md-4">
-//             <img src="..." className="img-fluid rounded-start" alt="..." />
-//           </div>
-//           <div className="col-md-8">
-//             <div className="card-body">
-//               <h5 className="card-title">Card title</h5>
-//               <p className="card-text">
-//                 vehiculossss fium
-//               </p>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//       <br />
-//       <Link to="/">
-//         <button className="btn btn-primary">Back home</button>
-//       </Link>
-//     </div>
-//   );
-// };
+<div className="card d-flex justify-content-center mx-5"> 
+		<hr className="text-danger mt-5"/>
+
+<div className="d-flex container text-danger mx-2 ">
+	  <h6 className="col-3">Name</h6>
+	  <h6 className="col-3">Climate</h6>
+	  <h6 className="col-3">Population</h6>
+	  <h6 className="col-3">Orbital Period</h6>
+	  <h6 className="col-3">Rotation Period</h6>
+	  <h6 className="col-3">Diameter</h6>
+	</div>
+
+	<div className="d-flex container text-dark mx-2 my-1 ">
+	  <span className="col-3"> {store.unvehiculo.name} </span>
+	  {/* <span className="col-3"> {store.unvehiculo.climate} </span> */}
+	  {/* <span className="col-3"> {store.unvehiculo.population} </span>
+	  <span className="col-3"> {store.unvehiculo.orbital_period} </span>
+	  <span className="col-3"> {store.unvehiculo.rotation_period} </span>
+	  <span className="col-3"> {store.unvehiculo.diameter} </span> */}
+	</div> 
+	</div>
+
+        </div>
+
+	);
+};
+
+ViewVehiculos.propTypes = {
+	match: PropTypes.object
+};

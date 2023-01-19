@@ -5,10 +5,10 @@ import {
 
 export const Cards = (props) => {
     return (
-<div className="card d-flex justify-content-center mx-5" style={{width: "540px;"}}>
+<div className="card d-flex justify-content-center mx-5" style={{height: "540px"}}>
   <div className="row g-0 ">
     <div className="col-md-4">
-      <img src="https://www.bakiautomobile.com/wp-content/uploads/2020/06/800x600.png" className="img-fluid rounded-start " alt="..."/>
+      <img src="https://www.bakiautomobile.com/wp-content/uploads/2020/06/800x600.png " className="img-fluid rounded-start " alt="..." />
     </div>
     <div className="col-md-8">
       <div className="card-body">
