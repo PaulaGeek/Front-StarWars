@@ -5,6 +5,7 @@ import { Planets } from "../component/planets";
 import { Vehiculos } from "../component/vehiculos";
 // import { Vehiculos } from "../component/vehiculos";
 import { Context } from "../store/appContext";
+import Form from "../component/form.jsx";
 
 
 export const Home = () => {
@@ -45,6 +46,9 @@ export const Home = () => {
 
   return (
     <div >
+      	<div className="text-center mt-5">
+		<Form/>
+	      </div>
       <div className="d-flex justify content center mx-5">
         <h1 className="text-dark"> Characters </h1>
       </div>
