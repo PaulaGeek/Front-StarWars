@@ -3,25 +3,12 @@ import { Link } from "react-router-dom";
 
 export const Navbar = () => {
 
-  function eliminarDatos(eliminarli) {
-    const nuevasTareas = save.filter(function (item, index) {
-      return index !== eliminarli;
-    });
-    setSave(nuevasTareas);
-  }
-
-  // function eliminarDatos(eliminarli) {
-  //   const nuevasTareas = save.filter(function (item, index) {
-  //     return index !== eliminarli;
-  //   });
-  //   setSave(nuevasTareas);
-
 
 	return (
 		<div>
-		<nav className="navbar navbar-light bg-light mb-3 ">
+		<nav className="navbar navbar-dark bg-dark mb-3 ">
 			<Link to="/">
-				<span className="navbar-brand mb-0 h1 mx-5"><img src="https://www.citypng.com/public/uploads/preview/-51608494060e1tvtjfsry.png"  width="55"
+				<span className="navbar-brand mb-0 h1 mx-5"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Star_Wars_Logo..png"  width="55"
                                   height="45" alt="" /></span>
 			</Link>
 
