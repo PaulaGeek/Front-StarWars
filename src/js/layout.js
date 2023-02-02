@@ -13,6 +13,8 @@ import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { ViewPlanets } from "./views/viewplanets";
 import { ViewVehiculos } from "./views/viewvehiculos";
+import { ViewRegistro } from "./views/viewregistro.jsx";
+import { ViewForm } from "./views/viewlogin.jsx";
 // import { Cards } from "./component/cards";
 
 //create your first component
@@ -33,9 +35,9 @@ const Layout = () => {
 						<Route path="/single/:theid" element={<Single />} />
 						<Route path="/viewplanets/:theid" element={<ViewPlanets />} />
 						<Route path="/viewvehiculos/:theid" element={<ViewVehiculos />} />
+						<Route path="/signup" element={<ViewRegistro />} />
+						<Route path="/login" element={<ViewForm />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
-						{/* <Route path="/viewplanets" element={<Planets />} />
-						<Route path="/viewvehiculos" element={<Vehiculos />} /> */}
 					</Routes>
 					<Footer />
 				</ScrollToTop>

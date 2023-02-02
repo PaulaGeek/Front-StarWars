@@ -46,9 +46,9 @@ export const Home = () => {
 
   return (
     <div >
-      	<div className="text-center mt-5">
-		<Form/>
-	      </div>
+      	{/* <div className="text-center mt-5">
+	      	<Form/>
+	      </div> */}
       <div className="d-flex justify content center mx-5">
         <h1 className="text-dark"> Characters </h1>
       </div>

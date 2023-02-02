@@ -2,44 +2,19 @@ import React, {useState, useContext} from "react";
 import {Context} from "../store/appContext.js";
 import {Navigate} from "react-router-dom"
 
+export const Form = () => {
 
+  const[email,setEmail]=useState("")
+  const[password,setPassword]=useState("")
+  const {store, actions}=useContext(Context)
 
-const Form = () => {
-
-   const[email,setEmail]=useState("")
-   const[password,setPassword]=useState("")
-   const {store, actions}=useContext(Context)
-
-   function enviarDatos(e) {
+  function enviarDatos(e) {
     e.preventDefault()
     actions.login(email,password)
     setEmail("")
     setPassword("")
-    fetch('https://3000-white-fish-qkq010v8ria.ws-us84.gitpod.io/login',{
-        method:'POST',
-        headers: {
-            'Content-Type': 'application/json'
-            // 'Content-Type': 'application/x-www-form-urlencoded',
-          },
-        body: JSON.stringify({"email":email,"password":password}) // body data type must match "Content-Type" header
-        
-    })
-    .then((response) => response.json())
-    .then((data) => console.log(data))
-    .catch((err)=>console.log(err))
-   }
+  }
 
-
-//    if (condition) {//true
-//     //bloque de codigo
-//    }else{//false
-// //bloque de codigo
-//    }
-
-// // condition ? bloque de codigo si es true : bloque de codigo si es false
-
-// store.auth === true ? <Navigate to="/ruta hacia donde ir"/> : <Formulario/>
-   
   return (
     <>
     {store.auth === true ? <Navigate to="/demo"/>:
@@ -78,4 +53,3 @@ const Form = () => {
   );
 };
 
-export default Form;
