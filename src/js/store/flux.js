@@ -38,8 +38,10 @@ const getState = ({
                 })
             },
             login: (userEmail, userPassword) => {
-                fetch('https://3000-paulageek-apistarwarsco-q8tnzt036dz.ws-us85.gitpod.io', {
+                fetch("https://3000-paulageek-apistarwarsco-q8tnzt036dz.ws-us85.gitpod.io/login", {
                         method: 'POST',
+                        // mode: "no-cors",
+                        // credentials: "include",
                         headers: {
                             'Content-Type': 'application/json'
                             // 'Content-Type': 'application/x-www-form-urlencoded',
@@ -69,16 +71,18 @@ const getState = ({
             },
 
             signup: (userEmail, userPassword, userName) => {
-                fetch('https://3000-paulageek-apistarwarsco-3z66vj4xdcc.ws-us84.gitpod.io/signup', {
+                fetch("https://3000-paulageek-apistarwarsco-q8tnzt036dz.ws-us85.gitpod.io/signup", {
                         method: 'POST',
+                        // mode: "no-cors",
+                        // credentials: "include",
                         headers: {
                             'Content-Type': 'application/json'
                             // 'Content-Type': 'application/x-www-form-urlencoded',
                         },
                         body: JSON.stringify({
-                            "nombre": userName,
-                            "email": userEmail,
-                            "password": userPassword
+                            "username": userName,
+                            "password": userPassword,
+                            "email": userEmail
                         }) // body data type must match "Content-Type" header
                     })
                     .then((response) => {
