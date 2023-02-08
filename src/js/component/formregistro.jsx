@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext.js";
 import { Navigate } from "react-router-dom";
+import { Home } from "../views/home.js";
 
 export const Registro = () => {
 

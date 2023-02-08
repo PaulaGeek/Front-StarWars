@@ -1,6 +1,6 @@
 import React, {useState, useContext} from "react";
 import {Context} from "../store/appContext.js";
-import {Navigate} from "react-router-dom"
+import {Link, Navigate} from "react-router-dom"
 
 export const Form = () => {
 
@@ -43,11 +43,16 @@ export const Form = () => {
           value={password}
           onChange={(e)=>setPassword(e.target.value)}
         />
+        
       </div>
+      <Link to="/">
       <button type="submit" className="btn btn-primary">
         Submit
       </button>
-    </form>}
+      </Link>
+      </form>}
+
+    
     </>
     
   );

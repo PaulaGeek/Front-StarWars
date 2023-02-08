@@ -38,7 +38,7 @@ const getState = ({
                 })
             },
             login: (userEmail, userPassword) => {
-                fetch("https://3000-paulageek-apistarwarsco-q8tnzt036dz.ws-us85.gitpod.io/login", {
+                fetch("https://3000-paulageek-apibackendsta-yujpqqvvaq2.ws-us86.gitpod.io/login", {
                         method: 'POST',
                         // mode: "no-cors",
                         // credentials: "include",
@@ -70,8 +70,15 @@ const getState = ({
                     .catch((err) => console.log(err))
             },
 
+            logout: () => {
+                localStorage.removeItem('token');
+                setStore({
+                    auth: false
+                })
+            },
+
             signup: (userEmail, userPassword, userName) => {
-                fetch("https://3000-paulageek-apistarwarsco-q8tnzt036dz.ws-us85.gitpod.io/signup", {
+                fetch("https://3000-paulageek-apibackendsta-yujpqqvvaq2.ws-us86.gitpod.io/signup", {
                         method: 'POST',
                         // mode: "no-cors",
                         // credentials: "include",
